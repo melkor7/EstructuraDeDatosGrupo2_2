@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+public class Ejercicio3 {
+
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner (System.in);
+		
+		int N ;
+        int cont = 0 ;
+                
+        System.out.println("Ingrese el número para calcular sus divisores" ) ;
+        N = scanner.nextInt ( ) ;
+        
+        
+        if  ( validacion ( N ) )  {
+        	
+            System.out.println( "Sus divisores son:" ) ;
+            divisores (N) ;
+            System.out.println( "la cantidad de divisores de " + N + " son: " + CantD ( N, cont ) ) ;
+            
+        }
+                
+    }
+    
+	//muestra los divisores
+    public static  void divisores ( int N) {
+        for ( int i = 1 ; i <= N ; i ++ )  {
+            if ( N % i == 0 )  {
+                System.out.println( i + "," ) ;
+                
+            }
+        }
+    }
+    
+    
+    //Funcion para validar si es positivo
+     public static boolean validacion( int N ) { 
+    	 
+        boolean aux = false ;
+        if  ( N > 0 )  {
+            aux = true ;
+        }
+        else 
+        {
+            System.out.println( "¡ERROR! Debe ingresar un numero positivo" ) ;
+        }
+        return aux ;
+    }
+     
+     
+    //Funcion para la cantidad de divisores
+    public  static  int CantD ( int N, int cont )  {
+        for ( int i = 1 ; i <= N ; i ++ )  {
+            if  ( N % i == 0 )  {
+                cont ++;
+            }
+        }
+        return cont ;
+
+	}
+
+}
